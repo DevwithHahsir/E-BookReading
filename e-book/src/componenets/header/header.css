@@ -1,0 +1,53 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+
+.header-main-container {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+    font-size: 2vw;
+}
+
+.header-heading {
+    font-weight: 600;
+
+}
+
+.header-account-btn button {
+    padding: 0.7rem;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    background-color: #5aba37;
+    color: white;
+    font-size: 0.99vw;
+    cursor: pointer;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header-account-btn button:hover {
+    background-color: #60a846;
+}
+
+
+@media (max-width: 992px) {
+    .header-main-container
+    {
+        font-size: 5vw;
+    }
+    .header-account-btn button
+    {
+        font-size: 2vw;
+    }
+
+
+        
+
+
+}

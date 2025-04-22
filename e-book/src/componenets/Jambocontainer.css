@@ -1,0 +1,100 @@
+.main-jambo-container {
+
+    margin-top: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    flex-wrap: wrap;
+
+
+    padding: 2rem;
+}
+
+.jambo-img img {
+    height: 20rem;
+    border-radius: 10px;
+}
+
+.text-container {
+
+    width: 75%;
+}
+
+.jambo-heading {
+    font-size: 2vw;
+    margin: 3rem;
+}
+
+.jambo-para {
+    margin: 3rem;
+    width: 90%;
+    color: #797979;
+
+
+}
+
+@media (max-width: 1200px) {
+    .main-jambo-container {
+        display: flex;
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        justify-content: center;
+        align-items: center;
+        padding: 1rem; /* Add some padding */
+        text-align: center; /* Center text for mobile */
+    }
+    
+    .jambo-img img {
+        height: auto; /* Make height flexible */
+        max-width: 100%; /* Ensure image doesn't overflow */
+        width: 100%; /* Use full available width */
+        border-radius: 10px;
+        margin-bottom: 1rem; /* Add space between image and text */
+    }
+
+    .text-container {
+        width: 100%; /* Take full width */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Center content vertically */
+        align-items: center;
+        padding: 0 1rem; /* Add horizontal padding */
+    }
+
+    .jambo-heading {
+        font-size: 1.5rem; /* Use rem instead of vw for better control */
+        margin: 0;
+        width: 100%; /* Take full width */
+    }
+
+    .jambo-para {
+        width: 100%; /* Take full width */
+        margin: 1rem 0; /* Add vertical margin */
+        font-size: 1rem; /* Set base font size */
+    }
+}
+
+/* Additional media queries for different screen sizes */
+@media (max-width: 768px) { /* Tablet sizes */
+    .jambo-heading {
+        font-size: 1.3rem;
+    }
+    
+    .jambo-para {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) { /* Mobile sizes */
+    .jambo-heading {
+        font-size: 1.1rem;
+    }
+    
+    .jambo-para {
+        font-size: 0.8rem;
+    }
+    
+    .main-jambo-container {
+        padding: 0.5rem;
+    }
+}
