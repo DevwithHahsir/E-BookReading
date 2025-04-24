@@ -4,8 +4,9 @@ import CountUp from "../animations/CountUp";
 import { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import BookCard from "../BookCard";
-import JamboContainer from "../JamboContainer";
+import BookCard from "../bookcards/BookCard";
+import JamboContainer from "../jambo/JamboContainer";
+import AppNavbar from "../navbar/Navbar";
 
 export default function Home() {
   useEffect(() => {
@@ -118,6 +119,7 @@ export default function Home() {
 
       <BookCard/>
       <JamboContainer/>
+      <AppNavbar/>
     </>
   );
 }

@@ -1,0 +1,16 @@
+.me-2
+{
+    border: none !important;
+    /* outline: none !important; */
+    background-color: transparent !important;
+    font-weight: 400;
+}
+.search-container {
+    display: flex;
+    border: 1px solid #5aba37 !important;
+    border-radius: 10px !important;
+    outline: none !important;
+    width: 20rem !important;
+    padding: 0.2rem;
+    
+}
