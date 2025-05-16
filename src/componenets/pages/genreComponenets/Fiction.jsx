@@ -1,11 +1,42 @@
-import "./bookcard.css";
+/* eslint-disable no-unused-vars */
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect, useState } from "react";
-import DetailCard from "../detailCard/DetailCard";
 
-export default function Slider({ books }) {
+// import "../../bookcards/bookscard"; // Assuming you have the relevant CSS
+
+export default function Fiction() {
+  const [books, setBooks] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [selectedBook, setSelectedBook] = useState(null);
+
+  const fetchFictionBooksFromAPI = async () => {
+    try {
+      const baseUrl = import.meta.env.VITE_BOOKS_API_URL;
+      const response = await fetch(`${baseUrl}?q=fiction`);
+      const data = await response.json();
+      if (Array.isArray(data.docs)) {
+        setBooks(
+          data.docs.map((item) => ({
+            title: item.title || "Unknown Title",
+            img: item.cover_i
+              ? `https://covers.openlibrary.org/b/id/${item.cover_i}-M.jpg`
+              : "https://via.placeholder.com/150x220",
+            authors: item.author_name || ["Unknown Author"],
+            publishYear: item.first_publish_year || "Unknown year",
+            key: item.key || "",
+          }))
+        );
+      } else {
+        throw new Error("Invalid data format");
+      }
+      setLoading(false);
+    } catch (err) {
+      setError(err.message);
+      setLoading(false);
+    }
+  };
 
   const handleDetail = (book) => {
     setSelectedBook(book);
@@ -16,24 +47,17 @@ export default function Slider({ books }) {
   };
 
   useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      once: true,
-    });
+    fetchFictionBooksFromAPI();
+    AOS.init({ duration: 1000, once: true });
   }, []);
 
-  if (!books || books.length === 0) {
-    return (
-      <div className="book-card-heading" data-aos="fade-right">
-        <h2>No books found.</h2>
-      </div>
-    );
-  }
+  if (loading) return <p className="book-card-heading">Loading fiction books...</p>;
+  if (error) return <p className="book-card-heading" style={{ color: "red" }}>{error}</p>;
 
   return (
     <>
       <div className="book-card-heading" data-aos="fade-right">
-        <h1>EXPLORE OUR TOP BOOKS</h1>
+        <h1>Fiction Books</h1>
       </div>
 
       <div
@@ -50,7 +74,7 @@ export default function Slider({ books }) {
                 alt={book.title || "Book Cover"}
                 onError={(e) => {
                   e.target.onerror = null;
-                  e.target.src = "https://via.placeholder.com/150";
+                  e.target.src = "https://via.placeholder.com/150x220";
                 }}
               />
             </div>
@@ -70,9 +94,7 @@ export default function Slider({ books }) {
                 </p>
               </div>
               <div className="det-btn">
-                <button onClick={() => handleDetail(book)}>
-                  Show Details
-                </button>
+                <button onClick={() => handleDetail(book)}>Explore</button>
               </div>
             </div>
           </div>
@@ -80,14 +102,7 @@ export default function Slider({ books }) {
       </div>
 
       {/* Detail Card Modal */}
-      {selectedBook && (
-        <div className="modal-overlay">
-        
-          <div className="modal-content">
-            <DetailCard book={selectedBook} onClose={closeDetail} />
-          </div>
-        </div>
-      )}
+      
     </>
   );
 }

@@ -6,6 +6,7 @@
     margin: 0px !important;
     padding: 0px !important;
     box-sizing: border-box !important;
+    
    
 }
 
@@ -21,9 +22,9 @@
 
 
 .bottom-navbar {
-    box-shadow: 0 -2px 50px rgba(0, 0, 0, 0.1);
-    /* border-top: 1px solid #eee; */
-    background-color: rgba(255, 255, 255, 0.199) !important;
+    
+    
+  
     backdrop-filter: blur(10px) !important;
     width: 100%;
 }
@@ -31,6 +32,8 @@
 .nav-main-container {
     margin-top: auto;
     /* Pushes the navbar to the bottom */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
 }
 
 /* Ensure content doesn't hide behind navbar */

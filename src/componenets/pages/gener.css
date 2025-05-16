@@ -1,0 +1,27 @@
+.genre-main-container {
+
+    margin: 2rem;
+}
+
+.genre-heading {
+    /* border: 1px solid; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.genre-heading h1 {
+    font-size: 4vw;
+}
+
+.genre-heading .gen-icon {
+    font-size: 2rem;
+    font-weight: 27rem;
+    cursor: pointer;
+}
+
+.genre-list ul a {
+    text-decoration: none;
+    color: #797979;
+
+}

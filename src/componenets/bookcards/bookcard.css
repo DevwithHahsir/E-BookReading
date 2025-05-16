@@ -2,7 +2,7 @@
 
     margin-top: 5rem;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
 
     flex-wrap: wrap;
     gap: 4rem;
@@ -11,10 +11,18 @@
 
 
 .book-card-heading {
-    font-size: 3vw;
+
     margin-top: 5rem;
     padding: 1rem;
+    /* border: 1px solid; */
 }
+
+
+.book-card-heading h1 {
+    font-size: 5vw;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 
 
 .book-card-container .book-card-img img {
@@ -24,6 +32,9 @@
     border-radius: 10px;
     margin: 0.5rem 0;
     transition: transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .book-container {
@@ -32,12 +43,25 @@
     padding: 1.3rem;
     width: max-content;
     border-radius: 10px;
+    width: 20%;
 }
 
 .detail-btn {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    /* border: 1px solid; */
+    flex-direction: column;
     align-items: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+
+}
+
+.det-btn {
+
+    width: 100%;
+    /* border: 1px solid; */
+    /* position: fixed; */
 
 }
 
@@ -45,15 +69,29 @@
     padding: 0.5rem;
     border-radius: 7px;
     border: none;
+    width: 100%;
     outline: none;
     background-color: #5aba37;
     color: white;
-    /* font-size: 1rem; */
+    /*font-size: 1rem;
+    */
     cursor: pointer;
-
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
 }
 
+
+.title {
+    font-weight: 700;
+}
+
+
+.rating {
+    font-weight: 600;
+}
 
 .title-rating .rating {
     font-size: 0.9rem;
@@ -61,8 +99,41 @@
       */
     color: #797979;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
 
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items:flex-start;
+  z-index: 1000;
+
+}
+
+.modal-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  position: relative;
+  z-index: 1001;
+  max-width: 800px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
 }
 
 @media (max-width: 1200px) {
@@ -77,7 +148,8 @@
         display: flex;
         justify-content: space-evenly;
         flex-wrap: wrap;
-        gap: 1rem;
+        /* width:%; */
+        /* gap: 1rem; */
 
     }
 
@@ -94,6 +166,7 @@
         padding: 0.4rem;
         width: max-content;
         border-radius: 10px;
+        width: 40%;
     }
 
 
@@ -113,6 +186,7 @@
 
     .title-rating {
         font-size: 0.7rem;
+        /* font-weight: 800; */
     }
 
 

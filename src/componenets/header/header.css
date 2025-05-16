@@ -10,6 +10,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
    
     font-size: 2vw;
 }
@@ -28,7 +29,8 @@
     color: white;
     font-size: 0.99vw;
     cursor: pointer;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
 }
 
 .header-account-btn button:hover {

@@ -6,7 +6,7 @@
     margin-top: 1.5rem;
     padding: 0 1rem;
     gap: 1.5rem;
-   
+
 }
 
 .home-hero-heading {
@@ -15,6 +15,8 @@
     width: 100%;
     text-align: center;
     line-height: 1.2;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
 }
 
 .home-hero-para {
@@ -53,7 +55,7 @@
     /* width: 100%; */
     flex-wrap: wrap;
     gap: 1rem;
-    
+
 }
 
 .book, .author, .reader {
@@ -71,18 +73,16 @@
 .home-hero-card-container {
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    /* padding: 1rem; */
     border-radius: 10px;
     align-items: center;
-
-
 
     margin-top: 1.5rem;
     width: 100%;
     max-width: 320px;
 }
 
-.hero-card img {
+.home-hero-card-container img {
     height: auto;
     width: 100%;
     max-width: 200px;
@@ -91,67 +91,8 @@
     transition: transform 0.3s ease;
 }
 
-.hero-card img:hover {
-    transform: rotateY(180deg);
-}
 
-.hero-card-info {
-    display: flex;
-    flex-direction: column;
-    font-size: 0.9rem;
-    color: #797979;
-    padding: 0.5rem 0;
-    width: 100%;
-    gap: 0.5rem;
-}
 
-.time, .rating {
-    color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.3rem;
-}
-
-.hero-card-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin-top: 1rem;
-    width: 100%;
-    gap: 0.8rem;
-}
-
-.hero-card-btn button {
-    padding: 0.7rem;
-    border-radius: 15px;
-    border: none;
-    outline: none;
-    background-color: #5aba37;
-    color: white;
-    font-size: 0.9rem;
-    cursor: pointer;
-    width: 45%;
-    min-width: 120px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    transition: all 0.3s ease;
-}
-
-.hero-card-btn .detail {
-    background-color: white;
-    color: #90C67C;
-    border: 1px solid #90C67C;
-}
-
-.hero-card-btn .read:hover {
-    background-color: #60a846;
-}
-
-.hero-card-btn .detail:hover {
-    color: #6b955c;
-    border-color: #6b955c;
-}
 
 /* Medium screens (tablets) */
 @media (max-width: 760px) {
@@ -191,6 +132,7 @@
         align-items: center;
         margin-top: 3rem;
         flex-wrap: wrap;
+
     }
 
     .home-hero-heading {
@@ -227,32 +169,49 @@
     }
 
     .home-hero-card-container {
+
+        position: absolute;
+        top: 20%;
+        left: 75%;
         display: flex;
         flex-direction: row;
-        align-items: center;
-        padding: 1rem;
-        border-radius: 10px;
+        /* justify-content:space-evenly; */
+        gap: 1rem;
+        height: 20rem;
+        width: 100%;
 
-        /* Optional background */
-        background-color: #ffffff;
-
-        /* Proper border */
-        /* border: 1px solid #000000; */
-
-        /* Fixed box-shadow syntax */
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-
-        /* Width settings */
-        max-width: 100%;
-        width: auto;
     }
 
 
-    .hero-card img {
-        height: 15rem;
-        width: 15rem;
-        border-radius: 10px;
-        margin: 1rem;
+    .home-hero-card-container .hero-img1, .hero-img2, .hero-img3 {
+        /* border: 1px solid; */
+        width: 10rem;
+        border-radius: 7px;
+        -webkit-border-radius: 7px;
+        -moz-border-radius: 7px;
+        -ms-border-radius: 7px;
+        -o-border-radius: 7px;
+    }
+
+    .home-hero-card-container .hero-img1 img {
+        height: 20rem;
+        object-fit: cover;
+        object-position: center;
+        /* width: 30rem !important; */
+    }
+
+    .home-hero-card-container .hero-img2 img, .hero-img3 img {
+        object-fit: cover;
+        object-position: center;
+
+        height: 9.5rem;
+    }
+
+
+    .img-box {
+        display: flex;
+        flex-direction: column;
+        /* gap: 1rem; */
     }
 
     .hero-card-info {
