@@ -40,8 +40,8 @@ function Gener() {
         </div>
 
         {showList ? (
-          <div className="genre-list">
-            <ul>
+          <div className="genre-list" >
+            <ul type="none">
               <a href="">
                 <li>Genre Fiction</li>
               </a>
@@ -59,9 +59,24 @@ function Gener() {
               </a>
             </ul>
           </div>
+
+          
+
+
+
+
+
+
         ) : (
           ""
         )}
+
+
+
+      
+
+
+
 
         <hr />
       </div>
@@ -69,10 +84,15 @@ function Gener() {
       {/* different Genre books show ki huwio */}
 
       <div className="genre-deatiail-container">
+        <hr />
         <div className="fiction-container"><Fiction/></div>
+        <hr />
         <div className="war-container"><War/></div>
+        <hr />
         <div className="romantic-container"><Romantic/></div>
+        <hr />
         <div className="Comedy-container"><Comedy/></div>
+        <hr />
       </div>
 
       <div className="navbar">
