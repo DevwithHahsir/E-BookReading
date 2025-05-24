@@ -4,6 +4,7 @@
     /* border: 1px solid #000; */
     justify-content: space-between;
     padding: 2rem;
+    height: auto;
 
 }
 .genre-detail-heading h1
@@ -68,8 +69,8 @@
     -moz-border-radius:7px ;
     -ms-border-radius:7px ;
     -o-border-radius:7px ;
-    background-color: #5aba3730;
-    backdrop-filter: blur(10px);
+    background-color: #5aba3700;
+    backdrop-filter: blur(30px);
     color: white;
     font-weight: 900;
     font-size: 1.2rem;
@@ -81,3 +82,31 @@
     color: rgb(103, 235, 103);
 }
      
+
+@media (max-width: 760px) 
+{
+    .genre-detail-container
+    {
+        /* border: 1px solid #000; */
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .genre-detail-container h1{
+        font-size: 2rem;
+    }
+
+    .genre-deatils ul li
+    {
+        /* border: 1px solid #000; */
+        font-size: 0.4rem;
+    }
+    .more
+    {
+        /* border: 1px solid; */
+        position: fixed;
+        left: 78%;
+        
+    }
+
+}

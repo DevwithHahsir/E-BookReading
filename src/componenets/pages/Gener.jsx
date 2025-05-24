@@ -7,7 +7,7 @@ import { GoChevronDown, GoChevronUp } from "react-icons/go";
 import { useState } from "react";
 
 import Comedy from "../pages/genreComponenets/Comedy"
-import Fiction from "../pages/genreComponenets/Fiction"
+import Fiction from "../../componenets/pages/genreComponenets/fiction"
 import Romantic from "../pages/genreComponenets/Romantic"
 import War from "../pages/genreComponenets/War"
 
