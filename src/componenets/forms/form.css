@@ -1,0 +1,109 @@
+.form-main-container {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 70vh;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+
+}
+
+
+form {
+    border-radius: 7px;
+    border: 1px solid;
+    display: flex;
+    flex-direction: column;
+    width: 28%;
+    height: 70%;
+    padding: 2rem;
+    justify-content: space-between;
+
+}
+.form-heading h1{
+
+    font-size: 3vw;
+    color: #60a846;
+}
+
+.forms-input {
+
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    /* border: 1px solid; */
+    justify-content: space-between;
+}
+
+
+.email, .password {
+    display: flex;
+    flex-direction: column;
+}
+
+label
+{
+    font-weight: 600;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+
+}
+input {
+    height: 1.9rem;
+    padding: 0.2rem;
+    border-radius: 5px;
+    border: 1px solid;
+    outline: greenyellow;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-color: green;
+}
+
+input:focus {
+    outline: greenyellow;
+
+
+}
+
+::placeholder {
+    padding: 0.2rem;
+
+}
+
+.error {
+    font-size: small;
+    font-weight: 500;
+    color: red;
+}
+
+
+.forgetPassword {
+    margin-top: 1rem;
+
+}
+
+.forgetPassword a {
+    font-size: small;
+    
+
+}
+
+.sub-btn {
+    /* margin: 1rem; */
+    background-color: #60a846;
+    color: white;
+}
+
+
+.sub-btn:hover
+{
+    background-color: 99e17f;
+}
+
+
+.nothaveAccount h6 {
+    font-size: small;
+}
