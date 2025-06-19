@@ -6,15 +6,15 @@
     margin: 0px !important;
     padding: 0px !important;
     box-sizing: border-box !important;
-    
-   
+
+
 }
 
 
 
 
 
-.search-container button{
+.search-container button {
     border: none !important;
 }
 
@@ -22,9 +22,9 @@
 
 
 .bottom-navbar {
-    
-    
-  
+
+
+
     backdrop-filter: blur(10px) !important;
     width: 100%;
 }
@@ -43,15 +43,14 @@ body {
 }
 
 
-.brand
-{
+.brand {
     font-size: 2vw !important;
     font-weight: 600;
     /* font-family:Verdana, Geneva, Tahoma, sans-serif; */
 
 }
-.nav-items
-{
+
+.nav-items {
     /* border: 1px solid; */
     position: relative;
     /* left: 5%; */
@@ -65,10 +64,10 @@ body {
 
 
 
-    .brand
-    {
+    .brand {
         font-size: 4vw !important;
     }
+
     .bottom-navbar {
         padding: 0.5rem 0;
     }

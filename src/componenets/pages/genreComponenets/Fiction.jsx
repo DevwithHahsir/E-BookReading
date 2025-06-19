@@ -77,7 +77,7 @@ export default function Fiction() {
 
         <div className="genre-img">
           <img
-            src="https://plus.unsplash.com/premium_photo-1678990345517-824bca693745?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8ZmljdGlvbnxlbnwwfHwwfHx8MA%3D%3D"
+            src="https://images.unsplash.com/photo-1671774637925-c11dd0051b60?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8ZmljdGlvbiUyMGJvb2tzfGVufDB8fDB8fHww"
             alt="img"
             loading="lazy"
           />

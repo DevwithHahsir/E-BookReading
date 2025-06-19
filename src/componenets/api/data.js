@@ -1,9 +1,6 @@
-export const fetchBooksFromAPI = async () => {
-  const randomWords = ['a', 'love', 'science', 'fiction', 'life', 'world', 'adventure'];
-  const randomWord = randomWords[Math.floor(Math.random() * randomWords.length)];
-
+export const fetchBooksFromAPI = async (query = 'fiction') => {
   const baseUrl = import.meta.env.VITE_BOOKS_API_URL;
-  const response = await fetch(`${baseUrl}?q=${randomWord}`);
+  const response = await fetch(`${baseUrl}?q=${query}`);
   const data = await response.json();
 
   if (Array.isArray(data.docs)) {

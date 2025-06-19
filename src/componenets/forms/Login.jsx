@@ -1,114 +1,96 @@
-import { Placeholder } from "react-bootstrap";
-import { useForm } from "react-hook-form";
-import "./form.css";
-import { GoBook } from "react-icons/go";
+import React, { useState } from "react";
 import { Link } from "react-router";
+import "./form.css";
+import Header from "../header/Header";
 
-export default function Login() {
-  const {
-    register,
-    handleSubmit,
-    // watch,
-    formState: { errors },
-  } = useForm();
-  //   const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data)
-  // console.log(watch("example")) // watch input value by passing the name of it
+// Different images for login form
+const images = [
+  "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=400&q=80", // laptop
+  "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80", // bookshelf
+  "https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=400&q=80", // library desk
+  "https://images.unsplash.com/photo-1467320424268-f91a16cf7c77?auto=format&fit=crop&w=400&q=80", // reading area
+];
 
-  const onSubmit = () => {
-    console.log("hello");
+const initialState = {
+  email: "",
+  password: "",
+};
+
+const LoginForm = () => {
+  const [form, setForm] = useState(initialState);
+  const [errors, setErrors] = useState({});
+
+  const validate = () => {
+    const errs = {};
+    if (!form.email) errs.email = "Email is required";
+    else if (!/\S+@\S+\.\S+/.test(form.email)) errs.email = "Email is invalid";
+    if (!form.password) errs.password = "Password is required";
+    return errs;
+  };
+
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+    setErrors({ ...errors, [e.target.name]: "" });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const errs = validate();
+    if (Object.keys(errs).length === 0) {
+      alert("Login successful!");
+      setForm(initialState);
+    } else {
+      setErrors(errs);
+    }
   };
 
   return (
-    <div className="form-main-container">
-      <div className="form-heading">
-        <h1>
-          {" "}
-          <GoBook /> Bookly{" "}
-        </h1>
+
+    <>
+    <Header/>
+    
+    <div className="library-auth-wrapper">
+      <div className="library-image-grid">
+        {images.map((src, idx) => (
+          <img src={src} alt={`Library login visual ${idx + 1}`} key={idx} />
+        ))}
       </div>
-
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="forms-input">
-          {/* register your input into the hook by invoking the "register" function */}
-
-          <div className="email">
-            <label htmlFor="">Email</label>
-            <input
-              placeholder="Enter Email"
-              {...register("email", {
-                required: "Email is required", // Added custom message for 'required'
-                minLength: {
-                  value: 3,
-                  message: "Enter the correct Email",
-                },
-                pattern: {
-                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: "Invalid email address",
-                },
-              })}
-            />
-            {errors.email && (
-              <span
-                className="
-          error"
-              >
-                {errors.email.message}
-              </span>
-            )}
-          </div>
-
-          <div className="password">
-            <label htmlFor="">password</label>
-
-            <input
-              type="password"
-              placeholder="Enter Password"
-              {...register("password", {
-                required: "Password is required",
-                minLength: {
-                  value: 8,
-                  message: "Password must be at least 8 characters long",
-                },
-                pattern: {
-                  value: /^(?=.*[A-Z])(?=.*[!@#$%^&*]).+$/,
-                  message:
-                    "Password must contain at least 1 uppercase letter and 1 special character (!@#$%^&*)",
-                },
-                validate: (value) => {
-                  if (!/[A-Z]/.test(value)) {
-                    return "Password must contain at least 1 uppercase letter";
-                  }
-                  if (!/[!@#$%^&*]/.test(value)) {
-                    return "Password must contain at least 1 special character (!@#$%^&*)";
-                  }
-                  return true;
-                },
-              })}
-            />
-            {errors.password && (
-              <span
-                className="
-          error"
-              >
-                {errors.password.message}
-              </span>
-            )}
-
-            <div className="forgetPassword">
-              <h6>
-                {" "}
-                <Link to=""> Forget Password ?</Link>
-              </h6>
-            </div>
-          </div>
+      <form className="signup-form" onSubmit={handleSubmit} autoComplete="off">
+        <h2 className="signup-title">Sign In</h2>
+        <div className="signup-input-group">
+          <label>Email</label>
+          <input
+            type="email"
+            name="email"
+            value={form.email}
+            onChange={handleChange}
+            className="signup-input"
+          />
+          {errors.email && <span className="signup-error">{errors.email}</span>}
         </div>
-
-        <input  className="sub-btn" type="submit" />
-
-        <div className="nothaveAccount">
-              <h6>New to Bookly ?  <Link to="/signup">SignUp</Link></h6>         
+        <div className="signup-input-group">
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            value={form.password}
+            onChange={handleChange}
+            className="signup-input"
+          />
+          {errors.password && <span className="signup-error">{errors.password}</span>}
+        </div>
+        
+        <button type="submit"  className="signup-button">Login</button>
+      
+        <div className="signup-links">
+          <a href="#" className="signup-link">Forgot Password?</a>
+          <span style={{ margin: "0 8px" }}>|</span>
+          <a href="signup" className="signup-link">Don't have an account? Sign Up</a>
         </div>
       </form>
     </div>
+    </>
   );
-}
+};
+
+export default LoginForm;

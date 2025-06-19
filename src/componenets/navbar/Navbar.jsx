@@ -4,7 +4,11 @@ import { NavLink } from "react-router-dom"; // ✅ import NavLink
 import "./navbar.css";
 import Search from "../searcInput/Search";
 
+// import { useState } from "react";
+
 function AppNavbar() {
+  // const [, setSearchResults] = useState([]);
+
   return (
     <div className="nav-main-container">
       <Navbar expand="lg" fixed="bottom" className="bottom-navbar">
@@ -24,13 +28,11 @@ function AppNavbar() {
               <NavLink to="/authors" className="nav-link">
                 Authors
               </NavLink>
-              {/* <NavLink to="/romantic" className="nav-link">
-                Romantic
-              </NavLink> */}
+              
             </Nav>
-            <Form className="d-flex align-items-center">
-              <Search />
-            </Form>
+            {/* <Form className="d-flex align-items-center">
+              <Search onResults={setSearchResults} />
+            </Form> */}
           </Navbar.Collapse>
         </Container>
       </Navbar>
